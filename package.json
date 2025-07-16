@@ -1,6 +1,6 @@
 {
   "name": "mettle-jsx-runtime",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "Runtime library for compiling jsx templates for mettle",
   "main": "./jsx-runtime/index.js",
   "module": "./jsx-runtime/index.esm.js",
@@ -23,11 +23,11 @@
     "mettle-jsx-runtime",
     "mettle-jsx",
     "jsx",
+    "jsx-runtime",
     "mettle",
     "mettlejs",
     "mettle-js",
     "virtual dom",
-    "html",
     "runtime",
     "javascript"
   ],
@@ -36,8 +36,5 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/maomincoding/mettle-jsx-runtime.git"
-  },
-  "bugs": {
-    "url": "https://github.com/maomincoding/mettle-jsx-runtime.git/issues"
   }
 }
