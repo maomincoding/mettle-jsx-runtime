@@ -32,6 +32,11 @@ typeof SuppressedError === "function" ? SuppressedError : function (error, suppr
     return e.name = "SuppressedError", e.error = error, e.suppressed = suppressed, e;
 };
 
+/**
+ * JSX namespace for usage with @jsxImportsSource directive
+ * when ts compilerOptions.jsx is 'react-jsx'
+ * https://www.typescriptlang.org/tsconfig#jsxImportSource
+ */
 function Fragment(props) {
     return () => {
         return props.children;
@@ -52,12 +57,6 @@ const JSXNodeFactory = {
         };
     },
 };
-
-/**
- * JSX namespace for usage with @jsxImportsSource directive
- * when ts compilerOptions.jsx is 'react-jsx'
- * https://www.typescriptlang.org/tsconfig#jsxImportSource
- */
 const jsxDEV = jsx;
 
 export { Fragment, jsx, jsxDEV, jsxs };

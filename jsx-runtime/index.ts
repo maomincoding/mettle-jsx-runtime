@@ -1,4 +1,4 @@
-import { jsx, jsxs, Fragment } from './jsx'
+export { JSX } from './jsx';
 
 /**
  * JSX namespace for usage with @jsxImportsSource directive
@@ -6,6 +6,27 @@ import { jsx, jsxs, Fragment } from './jsx'
  * https://www.typescriptlang.org/tsconfig#jsxImportSource
  */
 
-const jsxDEV = jsx
+function Fragment(props) {
+  return () => {
+    return props.children;
+  };
+}
+function jsx(tag, props, key) {
+  return JSXNodeFactory.createNode(tag, props, key);
+}
+const jsxs = jsx;
+const JSXNodeFactory = {
+  createNode(tag, props, key) {
+    const { children, ...newProps } = props;
+    return {
+      tag,
+      props: newProps,
+      children,
+      key,
+    };
+  },
+};
 
-export { jsx, jsxs, Fragment, jsxDEV }
+const jsxDEV = jsx;
+
+export { jsx, jsxs, Fragment, jsxDEV };
